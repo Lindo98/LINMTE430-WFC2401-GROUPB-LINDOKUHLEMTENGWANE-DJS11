@@ -11,6 +11,7 @@ export default defineConfig({
         "react-router-dom",
         "slick-carousel/slick/slick.css",
         "slick-carousel/slick/slick-theme.css",
+        "react-icons/fa",
       ],
     },
   },
