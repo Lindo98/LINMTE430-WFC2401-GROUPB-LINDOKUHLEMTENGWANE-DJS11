@@ -7,8 +7,11 @@ export default defineConfig({
 
   build: {
     rollupOptions: {
-      external: ["react-router-dom"],
-      external: ["slick-carousel/slick/slick.css"],
+      external: [
+        "react-router-dom",
+        "slick-carousel/slick/slick.css",
+        "slick-carousel/slick/slick-theme.css",
+      ],
     },
   },
 });
