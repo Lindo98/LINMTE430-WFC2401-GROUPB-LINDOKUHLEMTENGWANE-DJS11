@@ -48,10 +48,10 @@ const Episodes = ({ episodes }) => {
   const toggleFavorite = (episode) => {
     setFavorites((prevFavorites) => {
       const updatedFavorites = { ...prevFavorites };
-      if (updatedFavorites[episode.id]) {
-        delete updatedFavorites[episode.id];
+      if (updatedFavorites[episode.episode]) {
+        delete updatedFavorites[episode.episode];
       } else {
-        updatedFavorites[episode.id] = episode;
+        updatedFavorites[episode.episode] = episode;
       }
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       return updatedFavorites;
@@ -59,7 +59,7 @@ const Episodes = ({ episodes }) => {
   };
 
   const isFavorite = (episode) => {
-    return !!favorites[episode.id];
+    return !!favorites[episode.episode];
   };
 
   const EpisodeDescription = ({ description }) => {
