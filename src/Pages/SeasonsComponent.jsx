@@ -2,8 +2,23 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Episodes from "./Episodes"; // Import the EpisodesComponent
 
+/**
+ * Renders a component that displays a dropdown menu of seasons and their corresponding episodes.
+ *
+ * @param {Object} props - The props object containing the seasons data.
+ * @param {Array} props.seasons - An array of objects representing each season, with each object containing a "title" property.
+ * @return {JSX.Element} The rendered component.
+ */
+
 const Seasons = ({ seasons }) => {
   const [selectedSeason, setSelectedSeason] = useState("");
+
+  /**
+   * Updates the selected season based on the value selected in the dropdown menu.
+   *
+   * @param {Event} event - The event object triggered by the user's selection.
+   * @return {void} This function does not return anything.
+   */
 
   const handleSeasonChange = (event) => {
     setSelectedSeason(event.target.value);

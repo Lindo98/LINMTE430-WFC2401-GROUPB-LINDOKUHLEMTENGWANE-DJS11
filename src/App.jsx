@@ -4,7 +4,6 @@ import "./index.css";
 import "./App.css";
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/LoginPage";
-import MusicPlayer from "./Components/MusicPlayer";
 import Layout from "./Components/layout";
 import Favorites from "./Pages/Favorites";
 import Seasons from "./Pages/Seasons";
@@ -20,7 +19,6 @@ const App = () => {
           <Route path=":id" element={<Seasons />}>
             <Route path="episodes" element={<Episodes />} />
           </Route>
-          <Route path="player" element={<MusicPlayer />} />
         </Route>
         <Route path="favorites" element={<Favorites />} />
       </Routes>

@@ -3,6 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+/**
+ * Renders a carousel component with images fetched from an API and displayed in a slider.
+ *
+ * @return {JSX.Element} The carousel component with images displayed in a slider.
+ */
 const Carousel = () => {
   const [images, setImages] = useState([]);
 

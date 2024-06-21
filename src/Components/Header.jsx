@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * A function to handle the submission of a search query.
+ *
+ * @param {Event} e - The event object triggering the function.
+ * @return {void} No return value.
+ */
+
 const Header = () => {
   const [favorites, setFavorites] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,6 +18,13 @@ const Header = () => {
     setFavorites(storedFavorites);
   }, []);
 
+  /**
+   * Updates the search query and clears the search results if the query is empty.
+   *
+   * @param {Event} e - The input change event.
+   * @return {void}
+   */
+
   const handleSearchInputChange = (e) => {
     setSearchQuery(e.target.value);
     if (e.target.value === "") {
@@ -18,6 +32,12 @@ const Header = () => {
     }
   };
 
+  /**
+   * Handles the submission of a search query by filtering the favorites based on the search query.
+   *
+   * @param {Event} e - The event object triggering the function.
+   * @return {void} Sets the search results state to the filtered favorites.
+   */
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     const filteredResults = favorites.filter((item) => {
@@ -29,6 +49,11 @@ const Header = () => {
     setSearchResults(filteredResults);
   };
 
+  /**
+   * Clears the search results and resets the search query.
+   *
+   * @return {void} No return value.
+   */
   const clearSearchResults = () => {
     setSearchResults([]);
     setSearchQuery("");
@@ -54,32 +79,9 @@ const Header = () => {
           </button>
         </Link>
       </div>
-      <form className="search-bar" onSubmit={handleSearchSubmit}>
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-        />
-        <button className="search-btn" type="submit">
-          Search
-        </button>
-        {searchResults.length > 0 && (
-          <button className="clear-search-btn" onClick={clearSearchResults}>
-            Clear Search
-          </button>
-        )}
-      </form>
-      {searchResults.length > 0 && (
-        <div className="search-results">
-          <ul>
-            {searchResults.map((result, index) => (
-              <li key={index}>{result.title}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <Link to="/">
+        <button className="logout-btn ">Log Out</button>
+      </Link>
     </header>
   );
 };

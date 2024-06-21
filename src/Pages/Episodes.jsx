@@ -97,7 +97,10 @@ const Episodes = ({ episodes }) => {
               className="episode-item m-4 p-4 shadow-2xl rounded-lg"
             >
               <img src={images[episode.id]} alt="" className="" />
-              <h3 className="p-4">{episode.title}</h3>
+              <p className="text-xl font-bold m-4 mb-2">
+                Episode {episode.episode}
+              </p>{" "}
+              <h4 className="p-4">{episode.title}</h4>
               <EpisodeDescription description={episode.description} />
               <div className="flex items-center">
                 <button
@@ -145,7 +148,7 @@ Episodes.propTypes = {
       audioUrl: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
 };
 
 export default Episodes;
